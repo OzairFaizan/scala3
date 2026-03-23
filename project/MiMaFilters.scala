@@ -18,6 +18,8 @@ object MiMaFilters {
         ProblemFilters.exclude[MissingClassProblem]("scala.language$experimental$safe$"),
         ProblemFilters.exclude[MissingClassProblem]("scala.annotation.terminates"),
         ProblemFilters.exclude[MissingClassProblem]("scala.annotation.decreasesBy"),
+        ProblemFilters.exclude[MissingClassProblem]("scala.util.assumeTerminates"),
+        ProblemFilters.exclude[MissingClassProblem]("scala.util.assumeTerminates$"),
     ))
 
     val BackwardsBreakingChanges: Map[String, Seq[ProblemFilter]] = Map(
