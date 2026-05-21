@@ -466,8 +466,11 @@ class Definitions {
           tl => AnyType))).asType
 
   /** Method representing a throw */
-  @tu lazy val throwMethod: TermSymbol = enterMethod(OpsPackageClass, nme.THROWkw,
+  @tu lazy val throwMethod: TermSymbol =
+    val res = enterMethod(OpsPackageClass, nme.THROWkw,
       MethodType(List(ThrowableType), NothingType))
+    res.addAnnotation(AssumeTerminatesAnnot)
+    res
 
   @tu lazy val spreadMethod = enterMethod(OpsPackageClass, nme.spread,
       PolyType(TypeBounds.empty :: Nil)(
